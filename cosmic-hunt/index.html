@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Cosmic Hunt Ultimate Edition: Find Planet X</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Hind+Siliguri:wght@400;600&display=swap"
+      rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nasa-explorer.css">
+    <link rel="stylesheet" href="css/deep-space.css">
+    <link rel="stylesheet" href="css/ask-ai.css">
+  </head>
+  <body>
+    <canvas id="sky" aria-label="3D orrery. Drag to rotate, scroll to zoom."></canvas>
+    <div id="labels" style="display:none"></div>
+    <div id="tip" hidden></div>
+    <div id="lock"></div>
+    <button id="mute" hidden>Sound on</button>
+
+    <div id="tb" class="hud" hidden>
+      <button class="ib" id="bcat" title="Catalog">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+        </svg>
+      </button>
+      <button class="ib" id="bir" title="Infrared Vision">
+        <svg viewBox="0 0 24 24">
+          <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+      <button class="ib" id="bvw" title="Views">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>
+        </svg>
+      </button>
+      <button class="ib" id="bre" title="Reset view">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 12a8 8 0 1 0 3-6.2M4 4v5h5"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="vm" class="hud" hidden>
+      <button data-v="atlas" class="on">EXOPLANET ATLAS</button>
+      <button data-v="earth">EARTH AND SATELLITES</button>
+      <button data-v="mw">MILKY WAY</button>
+      <button data-v="gal">GALAXIES</button>
+    </div>
+
+    <div id="info" class="hud" hidden>
+      <button id="ic" aria-label="Close">&times;</button>
+      <h3 id="ih"></h3>
+      <small id="is"></small>
+      <p id="ip"></p>
+    </div>
+
+    <aside id="rp" class="hud" hidden>
+      <button id="rtab" aria-label="Toggle panel">&#9656;</button>
+      <h3>SPHEREx PANEL</h3>
+      <label class="sw"><input type="checkbox" id="ir"><span></span>Infrared Vision</label>
+      <p id="irs">Off. Visible light only.</p>
+
+      <h4>DATA CLUE BOX</h4>
+      <canvas id="spec" width="300" height="130"></canvas>
+      <p style="margin:6px 0 0">Target peak: <b style="color:var(--neon)">3.3 µm</b></p>
+      <ol id="clues"></ol>
+
+      <h4>SCAN LOG</h4>
+      <div id="log">
+        <div>Nothing scanned. Turn on Infrared Vision, then click an object.</div>
+      </div>
+    </aside>
+
+    <div id="bar" class="hud" hidden>
+      <button id="play">&#10074;&#10074;</button>
+      <span id="date"></span>
+      <button id="spd">x1</button>
+    </div>
+
+    <div id="splash">
+      <div class="bigp"></div>
+      <h1>COSMIC HUNT</h1>
+      <div class="sub">FIND PLANET X WITH NASA SPHEREx · ULTIMATE EDITION</div>
+      <div id="pb">
+        <div id="pf"></div>
+      </div>
+      <div id="ld" style="margin-top:8px;color:var(--mut);font-size:11px;letter-spacing:.2em">STARTING</div>
+      <div id="tap" class="blink">TAP THE SCREEN TO START · TURN SOUND ON</div>
+      <div class="team">TEAM SPARKS · NASA SPACE APPS CHALLENGE 2026</div>
+    </div>
+
+    <div class="ov" id="story" hidden style="z-index:45">
+      <div class="card hud">
+        <h2>MISSION BRIEFING</h2>
+        <p>NASA’s SPHEREx telescope is mapping the entire universe. But some mysterious objects, and ‘Planet X’, are hiding behind infrared light. Can you use NASA data to track them down?</p>
+        <button class="btn" id="begin">BEGIN THE HUNT</button>
+      </div>
+    </div>
+
+    <div class="ov" id="cat" hidden>
+      <div class="card hud">
+        <h2>CATALOG</h2>
+        <div class="grid" id="grid"></div>
+        <button class="btn" id="ccl" style="margin-top:16px">CLOSE</button>
+      </div>
+    </div>
+
+    <div id="explore" hidden>
+      <canvas id="model" aria-label="3D planet. Drag to rotate."></canvas>
+      <div id="xl"></div>
+      <div class="xp hud">
+        <div class="xh">
+          <button id="xc" aria-label="Back">&#8249;</button>
+          <div>
+            <h2 id="xn"></h2>
+            <small id="xt"></small>
+          </div>
+        </div>
+        <div class="tabs">
+          <button data-m="structure">STRUCTURE</button>
+          <button data-m="details">DETAILS</button>
+        </div>
+        <div id="xb"></div>
+      </div>
+    </div>
+
+    <div class="ov" id="win" hidden style="z-index:50">
+      <div class="card hud">
+        <h2>PLANET X LOCKED</h2>
+        <p>Its infrared signature peaks at <b>3.3 µm</b>, the exact signal in your Data Clue Box. Its distance, mass and size are still unknown, which is why it remains a mystery.</p>
+        <p>SPHEREx, launched in 2025, maps the whole sky in 102 infrared colors (0.75 to 5 µm).</p>
+        <p style="color:var(--cy);font-weight:600">Congratulations! You discovered a new world just like a NASA scientist. About 99% of the universe is still unknown, and you could be a space scientist of the future!</p>
+        <button class="btn" id="again">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/nasa-explorer.js"></script>
+    <script src="js/deep-space.js"></script>
+    <script src="js/ask-ai.js"></script>
+  </body>
+</html>

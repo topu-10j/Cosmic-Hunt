@@ -1,0 +1,165 @@
+#nxb {
+  position: fixed;
+  left: 64px;
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  z-index: 60;
+  background: #06123acc;
+  border: 1px solid var(--bl);
+  padding: 6px 12px;
+  letter-spacing: .14em;
+  font-size: 11px;
+  backdrop-filter: blur(8px)
+}
+
+#nx {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: #02040c;
+  font-size: 12px
+}
+
+#nxc {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab
+}
+
+.nxp {
+  position: absolute;
+  background: #071530b8;
+  border: 1px solid #2f6bdb88;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 40px #0008;
+  border-radius: 10px;
+  padding: 12px
+}
+
+#nxl {
+  left: 12px;
+  top: 12px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+#nxr {
+  right: 12px;
+  top: 12px;
+  bottom: 12px;
+  width: min(340px, calc(100% - 24px));
+  display: flex;
+  flex-direction: column
+}
+
+#nx button,
+#nx input {
+  font: inherit;
+  color: var(--tx);
+  background: #0a1d4a;
+  border: 1px solid var(--bl);
+  padding: 6px 8px;
+  border-radius: 6px
+}
+
+#nx button.on {
+  background: #1b4aa8;
+  border-color: var(--cy)
+}
+
+#nx button:disabled {
+  opacity: .4;
+  cursor: not-allowed
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap
+}
+
+.row > * {
+  flex: 1
+}
+
+#nxs {
+  font-size: 10px;
+  color: var(--mut);
+  line-height: 1.4
+}
+
+.real {
+  color: #6dd58c
+}
+
+.bad {
+  color: #ff8a7a
+}
+
+#nxt {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px
+}
+
+#nxt button {
+  flex: 1;
+  padding: 5px 2px;
+  font-size: 10px
+}
+
+#nxv {
+  overflow: auto;
+  flex: 1;
+  font: 13px/1.5 'Hind Siliguri', sans-serif
+}
+
+#nxv h4 {
+  margin: 10px 0 4px;
+  font: 11px Orbitron;
+  letter-spacing: .12em;
+  color: var(--cy)
+}
+
+#nxv img {
+  max-width: 100%;
+  border-radius: 6px;
+  display: block;
+  margin: 6px 0
+}
+
+#nxv a {
+  color: var(--cy)
+}
+
+#nxv table {
+  width: 100%;
+  border-collapse: collapse
+}
+
+#nxv td,
+#nxv th {
+  border-bottom: 1px solid #2f6bdb44;
+  padding: 4px;
+  text-align: left
+}
+
+.src {
+  font-size: 11px;
+  color: var(--mut)
+}
+
+@media (max-width: 700px) {
+  #nxr {
+    top: auto;
+    height: 46%
+  }
+
+  #nxl {
+    width: calc(100% - 24px)
+  }
+}

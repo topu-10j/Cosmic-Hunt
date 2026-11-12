@@ -1,0 +1,68 @@
+#aib {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 80;
+  background: #0a2a7a;
+  border: 1px solid var(--cy);
+  padding: 8px 14px;
+  letter-spacing: .12em;
+  font-size: 11px;
+  box-shadow: 0 0 14px #2f6bdb88
+}
+
+#aip {
+  position: fixed;
+  right: 10px;
+  bottom: 52px;
+  z-index: 80;
+  width: min(340px, calc(100% - 20px));
+  height: min(420px, 60%);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  font: 13px 'Hind Siliguri', sans-serif
+}
+
+#ail {
+  flex: 1;
+  overflow: auto;
+  line-height: 1.45
+}
+
+#ail div {
+  margin: 6px 0
+}
+
+#ail .u {
+  color: var(--cy)
+}
+
+#ail .a {
+  color: #d8e4ff
+}
+
+#aip input {
+  font: inherit;
+  color: var(--tx);
+  background: #0a1d4a;
+  border: 1px solid var(--bl);
+  padding: 6px 8px;
+  min-width: 0
+}
+
+.air {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px
+}
+
+.air input {
+  flex: 1
+}
+
+.air button {
+  background: #0a1d4a;
+  border: 1px solid var(--bl);
+  padding: 4px 10px
+}
