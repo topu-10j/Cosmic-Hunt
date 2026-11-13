@@ -10,7 +10,7 @@
 
 *Explore the Universe • Discover New Worlds • Solve the Mystery*
 
-[🌐 Live Website](https://team-sparks-cosmic-hunt2.netlify.app/) • [🎬 Watch Demo](YOUR_YOUTUBE_VIDEO_URL)
+[🌐 Live Website](https://team-sparks-cosmic-hunt2.netlify.app/) • [🎬 Watch Demo](https://youtu.be/i0opj3w2HBU?si=wWKTGA7arS0C5I_s)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
@@ -137,8 +137,8 @@ No installation or complex setup is required.
 Experience our project directly:
 
 - **🚀 Live Project:** [Launch Cosmic Hunt](https://team-sparks-cosmic-hunt2.netlify.app)
-- **🎬 Project Presentation:** [Watch on YouTube](YOUR_YOUTUBE_VIDEO_URL)
-- **💻 Source Code:** [GitHub Repository](YOUR_GITHUB_REPOSITORY_URL)
+- **🎬 Project Presentation:** [Watch on YouTube](https://youtu.be/i0opj3w2HBU?si=wWKTGA7arS0C5I_s)
+- **💻 Source Code:** [GitHub Repository](https://github.com/topu-10j/Cosmic-Hunt)
 
 ## 👥 Meet Team Sparks
 
