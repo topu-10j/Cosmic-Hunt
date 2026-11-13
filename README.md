@@ -116,8 +116,8 @@ NASA services are accessed where supported; availability may depend on internet 
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone https://github.com/topu-10j/Cosmic-Hunt.git
+cd Cosmic-Hunt
 ```
 
 Open the project in **VS Code** and run `index.html` using the **Live Server** extension.
