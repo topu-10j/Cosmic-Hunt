@@ -10,7 +10,7 @@
 
 *Explore the Universe • Discover New Worlds • Solve the Mystery*
 
-[🌐 Live Website](https://team-sparks-cosmic-hunt2.netlify.app/) • [🎬 Watch Demo](https://youtu.be/i0opj3w2HBU?si=wWKTGA7arS0C5I_s)• [🌍 Global Demo](https://www.youtube.com/watch?v=XtJ6U5VP5DY)
+[🌐 Live Website](https://team-sparks-cosmic-hunt2.netlify.app/) • [🎬 Local Demo](https://youtu.be/i0opj3w2HBU?si=wWKTGA7arS0C5I_s)• [🌍 Global Demo](https://www.youtube.com/watch?v=XtJ6U5VP5DY)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
